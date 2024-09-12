@@ -62,11 +62,17 @@ Weighted F1: 91.033 %
 Accuracy: 91.027 %
 ```
 
+![image](https://github.com/user-attachments/assets/375ed79b-06c9-4842-8533-1dbe32b62e45)
+
+
 ![](img/distilbert_results_normalized.png)
 
 The confusion matrix shows that the DistilBERT model's results are much, much better than the baseline model's. This makes sense because the pretrained transformer + a better training regime during fine-tuning (including a warmup of the learning rate and more robust optimization) helps the model better disambiguate tokens from much smaller amounts of training data.
 
 However, even though we see a 100% prediction rate for the minority class 'D', the un-normalized confusion matrix (on the right of the image above) shows that we only made predictions on only **4** test samples for this class, as can be seen below.
+
+![image](https://github.com/user-attachments/assets/7a045349-cb83-4f2b-9939-c1e7853b3395)
+
 
 ![](img/distilbert_results_unnormalized.png)
 
