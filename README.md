@@ -85,8 +85,7 @@ Micro F1: 66.595 %
 Weighted F1: 65.570 %
 Accuracy: 66.595 %
 ```
-
-![](img/svm_hinge_1.png)
+![image](https://github.com/user-attachments/assets/ad45db3e-4f52-4227-a7a7-79c8a8af7c70)
 
 This initial classifier is a rather poor one, because, as the confusion matrix shows, it has poor discriminatory power with regard to the minority classes ('D' and 'E').
 
@@ -100,7 +99,7 @@ Weighted F1: 64.544 %
 Accuracy: 63.721 %
 ```
 
-![](img/svm_hinge_2.png)
+![image](https://github.com/user-attachments/assets/c86231aa-ac81-495b-85fe-b160f1e74ef2)
 
 From the confusion matrix, it is clear that the minority classes 'D' and 'E' are much better predicted in this model. However, the overall accuracy and F1 scores dropped because of a loss of performance across the other classes, likely due to underfitting and an insufficient degree of convergence.
 
@@ -118,7 +117,8 @@ In this case, the macro F1-score is the highest among all the cases, because of 
 
 The following normalized confusion matrix was obtained with the model that used the modified Huber loss function.
 
-![](img/svm_modified_huber_best.png)
+![image](https://github.com/user-attachments/assets/3c7381a4-5dae-4304-bf85-f4a1722b86d8)
+
 
 Each value in the diagonal cells represents the fraction of samples in each class that were correctly classified. As can be seen, applying class weighting based on the imbalance in the training data results in model with a moderately decent predictive power for the majority and minority classes in this dataset.
 
