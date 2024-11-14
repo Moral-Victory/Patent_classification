@@ -3,7 +3,6 @@
 
 * The patent data is available as raw XML from this URL: https://bulkdata.uspto.gov/
 * Each large zipped file contains a single file, with multiple XML blocks
-* This repo contains preprocessing code (`preproc.py`) to organize these XML blocks into a form that can be parsed, and the relevant information extracted for classification purposes.
 
 The patent top-level section labels that are of interest are as follows:
 ```
