@@ -1,3 +1,32 @@
+# Patent Classification
+**Goal**: To train a machine learning classifier that can automatically classify international patents [downloaded from the WIPO website](https://www.wipo.int/classifications/ipc/en/) into one of eight categories based on the textual content of their titles/abstracts.
+
+* The patent data is available as raw XML from this URL: https://bulkdata.uspto.gov/
+* Each large zipped file contains a single file, with multiple XML blocks
+* This repo contains preprocessing code (`preproc.py`) to organize these XML blocks into a form that can be parsed, and the relevant information extracted for classification purposes.
+
+The patent top-level section labels that are of interest are as follows:
+```
+A, B, C, D, E, F, G, H
+
+A: Human necessities
+B: Performing operations; transporting
+C: Chemistry; metallurgy
+D: Textiles; paper
+E: Fixed constructions
+F: Mechanical engineering; lighting; heating; weapons; blasting
+G: Physics
+H: Electricity
+```
+
+A detailed guide to the WIPO classification taxonomy is [available on the WIPO website](https://www.wipo.int/publications/en/series/index.jsp?id=183).
+In addition, more information on the content taxonomy is available in the following document:
+
+> [Guide to the International Patent Classification, 2020 Edition](https://www.wipo.int/edocs/pubdocs/en/wipo_guide_ipc_2020.pdf), part II, p5. 
+
+### Download and place a file of stopwords
+For stopword removal (to train a linear model), we need a stopwords file. The [NLTK English stopword list](https://gist.github.com/sebleier/554280) is downloaded to the file `stopwords.txt`, placed at the root level of this repo.
+
 ## Baseline model: Linear Support Vector Machine (SVM)
 
 The baseline model trained is a linear SVM, via the [`sklearn` library's `SGDClassifier`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.SGDClassifier.html)). This model implements an L2-regularized linear model with stochastic gradient descent and mini-batching, making it a good choice for quickly training a reasonable model for benchmarking purposes.
