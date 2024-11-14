@@ -109,7 +109,8 @@ Without running any further hyperparameter tuning or grid search experiments, th
         learning_rate="optimal",
         tol=None,
     ),
-)```
+)
+```
 
 
 ---
